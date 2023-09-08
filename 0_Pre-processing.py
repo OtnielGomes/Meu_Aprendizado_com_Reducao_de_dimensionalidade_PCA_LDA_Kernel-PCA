@@ -6,7 +6,7 @@ census_data = pd.read_csv('census.csv')
 # Separating classifiers
 X_census = census_data.iloc[:, 0:14].values
 y_census = census_data.iloc[:, 14].values
-pd.options.display.max_columns = None
+
 # Label Encoder
 label_encoder_work_class = LabelEncoder()
 label_encoder_education = LabelEncoder()
@@ -29,7 +29,7 @@ X_census[:, 13] = label_encoder_native_country.fit_transform(X_census[:, 13])
 scaler_census = StandardScaler()
 X_census = scaler_census.fit_transform(X_census)
 
-with open('census_date.pkl', mode='wb') as f:
+with open('census_data.pkl', mode='wb') as f:
     pickle.dump([X_census, y_census], f)
 
 

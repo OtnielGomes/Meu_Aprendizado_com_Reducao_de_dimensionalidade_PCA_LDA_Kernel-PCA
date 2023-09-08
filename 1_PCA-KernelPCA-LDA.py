@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score, classification_report
 from yellowbrick.classifier import ConfusionMatrix
 
 # Pre-processing
-with open('census_date.pkl', mode='rb') as f:
+with open('census_data.pkl', mode='rb') as f:
     X_census, y_census = pickle.load(f)
 # Reducing the classifiers
 # PCA
